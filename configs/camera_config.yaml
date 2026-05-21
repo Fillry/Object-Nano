@@ -1,0 +1,42 @@
+# Camera configuration for ITS
+# Coordinates are normalized (0.0 to 1.0) to support different resolutions automatically
+cameras:
+  CCTV01:
+    #source: "vdo1_8-39-48_.mp4" # Can be RTSP URL e.g. "rtsp://username:password@ip:port/stream"
+    source: "rtsp://10.0.11.159:8554/vdo1"
+    fps: 10
+    line_a: [[0.1, 0.50], [0.9, 0.50]] # [[x1, y1], [x2, y2]]
+    line_b: [[0.1, 0.55], [0.9, 0.55]]
+    roi_mask: [[0.0, 0.30], [1.0, 0.30], [1.0, 0.90], [0.0, 0.90]]
+  
+  CCTV02:
+    #source: "vdo2_9-35-49.mp4"
+    source: "rtsp://10.0.11.159:8554/vdo2"
+    fps: 10
+    line_a: [[0.3469, 0.6861], [0.7125, 0.5407]]
+    line_b: [[0.3484, 0.5611], [0.6385, 0.4537]]
+    roi_mask: [[0.3302, 0.375], [0.3792, 0.8444], [0.8104, 0.6306], [0.5198, 0.3259]]
+
+  CCTV03:
+    #source: "vdo3_9-35-31.mp4"
+    source: "rtsp://10.0.11.159:8554/vdo3"
+    fps: 10
+    line_a: [[0.1, 0.50], [0.9, 0.50]]
+    line_b: [[0.1, 0.55], [0.9, 0.55]]
+    roi_mask: [[0.0, 0.20], [1.0, 0.20], [1.0, 0.90], [0.0, 0.90]]
+
+  CCTV04:
+    #source: "vdo3_9-35-31.mp4"
+    source: "rtsp://10.0.11.159:8554/vdo4"
+    fps: 10
+    line_a: [[0.1, 0.50], [0.9, 0.50]]
+    line_b: [[0.1, 0.55], [0.9, 0.55]]
+    roi_mask: [[0.0, 0.20], [1.0, 0.20], [1.0, 0.90], [0.0, 0.90]]
+
+  CCTV05:
+    #source: "vdo3_9-35-31.mp4"
+    source: "rtsp://10.0.11.159:8554/vdo5"
+    fps: 10
+    line_a: [[0.1, 0.50], [0.9, 0.50]]
+    line_b: [[0.1, 0.55], [0.9, 0.55]]
+    roi_mask: [[0.0, 0.20], [1.0, 0.20], [1.0, 0.90], [0.0, 0.90]]

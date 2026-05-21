@@ -1,0 +1,6 @@
+numpy>=1.20.0
+opencv-python>=4.5.0
+pyyaml>=5.4.1
+pandas>=1.3.0
+ultralytics>=8.0.0
+# onnxruntime # optional fallback for Jetson ONNX

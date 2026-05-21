@@ -1,0 +1,32 @@
+# Model Configuration for ITS Edge AI
+
+detector:
+  model_path: "yolo26n.pt" # Use PT for debugging/desktop, will compile to Engine (.engine) on Jetson
+  conf_threshold: 0.25
+  iou_threshold: 0.45
+  device: "cpu" # Set to "cuda" if running on Jetson with GPU, or "cpu" for fallback
+  img_size: 640
+
+tracker:
+  max_age: 30 # Number of frames to keep lost track before deleting
+  min_hits: 3
+  iou_threshold: 0.3
+
+classifiers:
+  brand:
+    enabled: true
+    model_path: "models/tinyVIT_ThaiCar_ONNX/brand_classifier.onnx" # Supports .pth, .onnx, .engine / .trt
+    conf_threshold: 0.50
+    classes: ["Aion", "BMW", "Bus", "BYD", "Chevrolet", "Ford", "GWM", "Geely", "Haval", "Honda", "Isuzu", "Jaecoo", "Kia", "Mazda", "Mercedes-Benz", "MG", "Mini", "Mitsubishi", "Motorcycle", "Neta", "Nissan", "Peugeot", "Proton", "Subaru", "Suzuki", "Tesla", "Toyota", "Truck", "Volkswagen", "Wuling"]
+  
+  color:
+    enabled: true
+    # We can use hybrid HSV rule-based or simple classifier
+    use_hsv_fallback: true 
+    model_path: "models/color_classifier.pt"
+    classes: ["Black", "White", "Gray", "Silver", "Red", "Blue", "Bronze", "Gold", "Green", "Yellow", "Orange", "Navy Blue", "Charcoal", "Maroon", "Blue-White", "Red-White", "Yellow-Green"]
+
+stream_reader:
+  use_jetson_hw_dec: false # Set to true on Jetson Nano to enable hardware decoding (GStreamer + NVDEC)
+  latency: 100
+

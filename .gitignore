@@ -1,0 +1,25 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Virtual Environments
+env_its/
+venv/
+.venv/
+
+# Databases
+*.db
+*.sqlite
+
+# Large compiled models / logs
+*.engine
+*.trt
+*.log
+cropped_samples/
+output_samples/
